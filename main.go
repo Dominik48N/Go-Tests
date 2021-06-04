@@ -1,7 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+var scripts []Script
 
 func main() {
-	fmt.Println("Hello World!")
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Println("Execute a available feature.")
+	fmt.Printf("Scripts: %v\n", scripts)
+	fmt.Println("--------------------")
+
+	for {
+		fmt.Print("> ")
+		text, _ := reader.ReadString('\n')
+		text = strings.Replace(text, "\n", "", -1)
+
+		if strings.Compare("scripts", text) == 0 {
+			fmt.Printf("Scripts: %v\n", scripts)
+		}
+	}
+}
+
+type Script interface {
 }
