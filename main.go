@@ -12,7 +12,7 @@ var scripts []Script
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Println("Execute a available feature.")
+	fmt.Println("Execute a available feature. Developer: Dominik48N")
 	fmt.Printf("Scripts: %v\n", scripts)
 	fmt.Println("--------------------")
 
